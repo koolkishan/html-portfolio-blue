@@ -307,4 +307,55 @@ li {
   background-color: #ffd1661e;
   border-left: 0.2rem solid #ffd166;
 }
+
+@media screen and (max-width: 1024px) {
+  body {
+    height: 200vh;
+    max-height: none;
+  }
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    height: 430vh;
+    font-size: 1.2rem;
+  }
+  li {
+    font-size: 1rem;
+  }
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .col-1 {
+    width: 100%;
+  }
+  .container .col-1 .image {
+    height: 45%;
+  }
+  .container .col-1 .hobbies {
+    margin: 5%;
+  }
+  .container .col-2 {
+    width: 100%;
+  }
+  .container .col-2 .r-title {
+    margin: 10% 3%;
+  }
+  .container .col-2 .skills .skill-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    margin: 0 10%;
+  }
+  .container .col-2 .skills .skill-container .skill {
+    width: 80%;
+  }
+}
 /*# sourceMappingURL=style.css.map */

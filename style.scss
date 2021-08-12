@@ -128,12 +128,10 @@ li {
     .hobbies {
       height: 30%;
       margin: 10%;
-
       .grid {
         margin-top: 18%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-
         .hobby {
           display: flex;
           flex-direction: column;
@@ -143,8 +141,6 @@ li {
           i {
             margin-bottom: 15%;
             font-size: 1.5rem;
-          }
-          span {
           }
         }
       }
@@ -228,8 +224,50 @@ li {
   }
 }
 
-// @media screen and (min-width: 720px) {
-//   .container {
-//     width: 80%;
-//   }
-// }
+@media screen and (max-width: 1024px) {
+  body {
+    height: 200vh;
+    max-height: none;
+  }
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    height: 430vh;
+    font-size: 1.2rem;
+  }
+  li {
+    font-size: 1rem;
+  }
+  .container {
+    flex-direction: column;
+    .col-1 {
+      width: 100%;
+      .image {
+        height: 45%;
+      }
+      .hobbies {
+        margin: 5%;
+      }
+    }
+    .col-2 {
+      width: 100%;
+      .r-title {
+        margin: 10% 3%;
+      }
+      .skills {
+        .skill-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          margin: 0 10%;
+          .skill {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
