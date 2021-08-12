@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #3a86ff;
+  height: 165vh;
+  max-height: 85rem;
+  position: relative;
+  font-family: "Lato", sans-serif;
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #3a86ff;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+img,
+div,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 0.5%;
+  font-size: 0.9rem;
+  width: 95%;
+}
+
+.diagonal {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: fixed;
+  clip-path: polygon(0 0, 100% 0%, 100% 58%, 0 30%);
+}
+
+.r-title {
+  color: #3a86ff;
+  font-size: 1.4rem;
+}
+
+@mixin backgrounds {
+  margin: 2% 0;
+  &:nth-of-type(1) {
+    background-color: #06d69e1e;
+    border-left: 0.2rem solid #06d6a0;
+  }
+  &:nth-of-type(2) {
+    background-color: #e639471e;
+    border-left: 0.2rem solid #e63946;
+  }
+  &:nth-of-type(3) {
+    background-color: #ffd1661e;
+    border-left: 0.2rem solid #ffd166;
+  }
+  padding: 1.5%;
+}
+
+@mixin getTitle {
+  font-size: 1rem;
+  margin-bottom: 0.5%;
+}
+
+.container {
+  height: 90%;
+  width: 50vw;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 5% auto;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+  display: flex;
+  .col-1 {
+    height: 100%;
+    width: 38%;
+    .image {
+      height: 40%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .profile {
+      height: 25%;
+      background-color: #0d1b2a;
+      padding: 5% 10% 0 10%;
+      .title {
+        h1 {
+          font-size: 1.6rem;
+          letter-spacing: 0.04rem;
+          color: white;
+        }
+        h3 {
+          font-size: 1rem;
+          color: #3a86ff;
+        }
+      }
+      .info-container {
+        margin-top: 7%;
+        color: white;
+        .info {
+          margin-top: 8%;
+          i {
+            margin-right: 4%;
+            width: 1rem;
+          }
+        }
+      }
+    }
+    .hobbies {
+      height: 30%;
+      margin: 10%;
+
+      .grid {
+        margin-top: 18%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .hobby {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 45%;
+          color: #373c42;
+          i {
+            margin-bottom: 15%;
+            font-size: 1.5rem;
+          }
+          span {
+          }
+        }
+      }
+    }
+  }
+  .col-2 {
+    width: 65%;
+    margin: 2%;
+    .bio {
+      background-color: #3a85ff52;
+      p {
+        padding: 3%;
+        font-weight: 400;
+      }
+    }
+    .skills {
+      .skill-container {
+        display: flex;
+        gap: 5%;
+        margin-top: 2%;
+        .skill {
+          border: 0.1rem solid #3a86ff;
+          border-radius: 1rem;
+          width: 20%;
+          padding: 1% 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .projects {
+    margin: 3.5% 0;
+    .project-container {
+      .project {
+        @include backgrounds();
+        .title {
+          @include getTitle();
+        }
+      }
+    }
+  }
+  .experience {
+    margin: 3.5% 0;
+    .exp-container {
+      .exp {
+        @include backgrounds();
+        .title {
+          @include getTitle();
+        }
+      }
+    }
+  }
+  .education {
+    margin: 3.5% 0;
+    .edu-container {
+      .edu {
+        @include backgrounds();
+        .title {
+          @include getTitle();
+        }
+        .details {
+          display: flex;
+
+          span {
+            &:first-of-type {
+              width: 80%;
+            }
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+  .achievements {
+    ul {
+      margin-top: 2%;
+      li {
+        @include backgrounds();
+      }
+    }
+  }
+}
+
+// @media screen and (min-width: 720px) {
+//   .container {
+//     width: 80%;
+//   }
+// }
