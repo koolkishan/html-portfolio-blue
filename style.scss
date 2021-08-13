@@ -5,7 +5,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #3a86ff;
-  height: 165vh;
+  height: 165vh !important;
   max-height: 85rem;
   position: relative;
   font-family: "Lato", sans-serif;
@@ -231,7 +231,6 @@ li {
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   body {
-    height: fit-content;
     max-height: none;
   }
   .container {
