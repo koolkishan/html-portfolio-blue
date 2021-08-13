@@ -55,6 +55,7 @@ li {
 
 @mixin backgrounds {
   margin: 2% 0;
+
   &:nth-of-type(1) {
     background-color: #06d69e1e;
     border-left: 0.2rem solid #06d6a0;
@@ -68,6 +69,10 @@ li {
     border-left: 0.2rem solid #ffd166;
   }
   padding: 1.5%;
+
+  @media screen and (max-width: 480px) {
+    width: 90%;
+  }
 }
 
 @mixin getTitle {
@@ -224,19 +229,25 @@ li {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   body {
-    height: 200vh;
+    height: fit-content;
     max-height: none;
   }
   .container {
+    height: fit-content;
     width: 90%;
+    .col-1 {
+      .profile {
+        min-height: 15rem;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
   body {
-    height: 430vh;
+    height: fit-content;
     font-size: 1.2rem;
   }
   li {
@@ -244,19 +255,45 @@ li {
   }
   .container {
     flex-direction: column;
+    width: 90%;
+    height: fit-content;
+
     .col-1 {
       width: 100%;
+      height: max-content;
       .image {
-        height: 45%;
+        height: 35%;
+      }
+      .profile {
+        height: max-content;
+        padding-bottom: 10%;
       }
       .hobbies {
         margin: 5%;
+        height: max-content;
+        .grid {
+          margin-top: 10%;
+          .hobby {
+            margin-bottom: 20%;
+            &:nth-of-type(3) {
+              margin-bottom: 2%;
+            }
+            &:nth-of-type(4) {
+              margin-bottom: 2%;
+            }
+          }
+        }
       }
     }
     .col-2 {
+      height: max-content;
       width: 100%;
+      max-width: 100%;
       .r-title {
         margin: 10% 3%;
+      }
+      .bio {
+        max-width: 95%;
       }
       .skills {
         .skill-container {
