@@ -335,6 +335,9 @@ li {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   body {
     max-height: none;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
   }
   .container {
     height: -webkit-fit-content;
